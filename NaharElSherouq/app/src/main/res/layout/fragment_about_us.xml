@@ -2,14 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mahmoud.naharelsherouq.AboutUsFragment">
+    tools:context="com.mintain.mahmoud.naharelsherouq.AboutUsFragment">
 
     <!-- TODO: Update blank fragment layout -->
    <ImageView
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_alignParentTop="true"
-       android:scaleType="center"
-       android:src="@drawable/about_us_pic"/>
+       android:layout_height="150dp"
+       android:src="@drawable/about_us_pic"
+       android:scaleType="fitXY"/>
 
 </RelativeLayout>

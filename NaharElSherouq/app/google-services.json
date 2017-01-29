@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "503411566983",
+    "firebase_url": "https://nahar-el-sherouq.firebaseio.com",
+    "project_id": "nahar-el-sherouq",
+    "storage_bucket": "nahar-el-sherouq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503411566983:android:ae13bce3a06d08d7",
+        "android_client_info": {
+          "package_name": "com.mintain.mahmoud.naharelsherouq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503411566983-cnfp49ervf797c0c4cmv0bb7ukim2sn3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mintain.mahmoud.naharelsherouq",
+            "certificate_hash": "3AFFA093D301D1D16B4BCC10434EA0DEBB89B008"
+          }
+        },
+        {
+          "client_id": "503411566983-ehs60vkh8e2mrdip3ajorob2rqej922t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiEHtrkyEhcuk62zX_3dj-x3VafaKD0ks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503411566983-ehs60vkh8e2mrdip3ajorob2rqej922t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
