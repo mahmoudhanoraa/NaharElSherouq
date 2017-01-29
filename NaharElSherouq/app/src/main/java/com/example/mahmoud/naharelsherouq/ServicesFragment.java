@@ -3,7 +3,6 @@ package com.example.mahmoud.naharelsherouq;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,11 +18,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShopsFragment extends android.support.v4.app.Fragment{
+public class ServicesFragment extends Fragment {
 
 
-
-    public ShopsFragment() {
+    public ServicesFragment() {
         // Required empty public constructor
     }
 
@@ -31,11 +29,11 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.shops_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_services, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.shopsRecyclerView);
-        List<Category> cats = CategoryDataProvider.categoryList;
-        ShopRecyclerViewAdabter adabter = new ShopRecyclerViewAdabter(rootView.getContext(), cats);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.servicesRecyclerView);
+        List<Category> cats = CategoryDataProvider.servicesList;
+        ServicesRecyclerViewAdabter adabter = new ServicesRecyclerViewAdabter(rootView.getContext(), cats);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(rootView.getContext(),3));
         recyclerView.setAdapter(adabter);
@@ -43,7 +41,5 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
         // Inflate the layout for this fragment
         return rootView;
     }
-
-
 
 }

@@ -21,19 +21,20 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AdsFragment extends Fragment {
+public class AdsFragment1 extends Fragment {
 
 
     private static final String ARG_CATEGORY_NAME = "category_name";
 
-    public AdsFragment() {
+    public AdsFragment1() {
         // Required empty public constructor
     }
 
-    public static AdsFragment newInstance(String category) {
+    public static AdsFragment1 newInstance(String category) {
+
         Bundle args = new Bundle();
         args.putString(ARG_CATEGORY_NAME, category);
-        AdsFragment fragment = new AdsFragment();
+        AdsFragment1 fragment = new AdsFragment1();
         fragment.setArguments(args);
         return fragment;
     }
@@ -42,9 +43,10 @@ public class AdsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_ads, container, false);
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.shopsAdsRecyclerView);
         // Inflate the layout for this fragment
+        View rootView = inflater.inflate(R.layout.fragment_ads_fragment1, container, false);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.servicesAdsRecyclerView);
+
         String category = getArguments().getString(ARG_CATEGORY_NAME);
         List<Advertaisment> allAds = AdvertaismentDataProvider.advertaismentsList;
         List<Advertaisment> categoryAds = new ArrayList<Advertaisment>();
@@ -54,11 +56,11 @@ public class AdsFragment extends Fragment {
                 categoryAds.add(ad);
             }
         }
-
-        AdvertaismentShopsRecyclerViewAdabter aRecyclerViewAdabter = new AdvertaismentShopsRecyclerViewAdabter(rootView.getContext(), categoryAds);
+        AdvertaismentServicesRecyclerViewAdabter aRecyclerViewAdabter = new AdvertaismentServicesRecyclerViewAdabter(rootView.getContext(), categoryAds);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager((new LinearLayoutManager(rootView.getContext())));
         recyclerView.setAdapter(aRecyclerViewAdabter);
+
         return rootView;
     }
 

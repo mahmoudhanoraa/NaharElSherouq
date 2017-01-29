@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mahmoud.naharelsherouq.DetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/AdDetailName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/imageAdDetail"
+        android:text="Product name"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/AdDetailName"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp">
+
+    <TextView
+        android:id="@+id/descriptionAdDetailText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageAdDetail"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

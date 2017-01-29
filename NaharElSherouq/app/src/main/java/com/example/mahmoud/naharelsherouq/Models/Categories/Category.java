@@ -5,15 +5,17 @@ package com.example.mahmoud.naharelsherouq.Models.Categories;
  */
 
 public class Category {
-    String name;
-    String icon;
+    private String name;
+    private String icon;
+    private boolean isService;
 
     public Category() {
     }
 
-    public Category(String name, String icon) {
+    public Category(String name, String icon, boolean isService) {
         this.name = name;
         this.icon = icon;
+        this.isService = isService;
     }
 
     public String getName() {
@@ -32,6 +34,13 @@ public class Category {
         this.icon = icon;
     }
 
+    public boolean isService() {
+        return isService;
+    }
+
+    public void setService(boolean service) {
+        isService = service;
+    }
 
     @Override
     public String toString() {
