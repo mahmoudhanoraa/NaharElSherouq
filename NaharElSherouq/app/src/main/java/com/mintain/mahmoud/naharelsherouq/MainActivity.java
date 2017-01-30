@@ -22,7 +22,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.firebase.client.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mintain.mahmoud.naharelsherouq.Models.Advertaisments.AdvertaismentDataProvider;
+import com.mintain.mahmoud.naharelsherouq.Models.Categories.Category;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,13 +57,37 @@ public class MainActivity extends AppCompatActivity {
         // END for full splash screen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //
-        Firebase.setAndroidContext(this);
-        root = new Firebase("https://nahar-el-sherouq.firebaseio.com/");
 
-        Firebase child = root.child("Name");
-        child.setValue("Hanora");
-        //
+
+        //START DATABASE TESTS
+        Firebase.setAndroidContext(this);
+//        root = new Firebase("https://nahar-el-sherouq.firebaseio.com/");
+//
+//        Firebase child = root.child("Name");
+//        child.setValue("Hanora");
+
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference databaseReference = database.getReference();
+//        databaseReference.child("Categories").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+//                for (DataSnapshot child : children){
+//                    Category cat = child.getValue(Category.class);
+//                    Log.d("Data", cat.toString());
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+
+
+        //END DATABASE TESTS
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -170,6 +200,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent facebook = getOpenFacebookIntent(MainActivity.this);
+            startActivity(facebook);
             return true;
         }
 

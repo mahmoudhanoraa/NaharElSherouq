@@ -39,7 +39,7 @@ public class CategoryDataProvider {
 
     }
     private static void addCategory(Category category){
-        if(category.isService() == true) {
+        if(category.isIsService() == true) {
             servicesList.add(category);
             return;
         }

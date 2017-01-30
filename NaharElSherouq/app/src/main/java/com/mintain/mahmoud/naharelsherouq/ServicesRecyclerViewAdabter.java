@@ -1,6 +1,7 @@
 package com.mintain.mahmoud.naharelsherouq;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.mintain.mahmoud.naharelsherouq.Models.Categories.Category;
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +25,7 @@ import java.util.List;
 public class ServicesRecyclerViewAdabter extends RecyclerView.Adapter<ServicesRecyclerViewAdabter.ViewHolder> {
     private Context context;
     private List<Category> categories;
+    private StorageReference mStorageRef;
 
     public ServicesRecyclerViewAdabter(Context context, List<Category> categories) {
         this.context = context;
@@ -36,12 +41,24 @@ public class ServicesRecyclerViewAdabter extends RecyclerView.Adapter<ServicesRe
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         final Category category = this.categories.get(position);
 
         holder.catName.setText(category.getName());
         String imageFile = category.getIcon();
-        Picasso.with(context).load("file:///android_asset/"+imageFile).resize(50,50).into(holder.catIcon);
+        //Picasso.with(context).load("file:///android_asset/"+imageFile).resize(50,50).into(holder.catIcon);
+
+        // START TESTING STORADGE
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference filePath = mStorageRef.child("images/categories/"+imageFile);
+
+        filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.with(context).load(uri).resize(50,50).into(holder.catIcon);
+            }
+        });
+        // END TESTING STORADGE
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

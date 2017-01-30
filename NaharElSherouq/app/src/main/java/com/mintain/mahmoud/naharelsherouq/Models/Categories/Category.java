@@ -34,7 +34,7 @@ public class Category {
         this.icon = icon;
     }
 
-    public boolean isService() {
+    public boolean isIsService() {
         return isService;
     }
 

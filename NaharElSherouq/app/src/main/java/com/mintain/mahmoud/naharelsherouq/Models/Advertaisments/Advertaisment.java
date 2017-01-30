@@ -7,19 +7,20 @@ package com.mintain.mahmoud.naharelsherouq.Models.Advertaisments;
 public class Advertaisment {
     private String brandName;
     private String iconImage;
-    private String advertaismentImage;
     private String description;
     private String categoryName;
+    private String descAndContacts;
+
 
     public Advertaisment() {
     }
 
-    public Advertaisment(String brandName, String iconImage, String advertaismentImage, String description, String categoryName) {
+    public Advertaisment(String brandName, String iconImage, String description, String categoryName, String descAndContacts) {
         this.brandName = brandName;
         this.iconImage = iconImage;
-        this.advertaismentImage = advertaismentImage;
         this.description = description;
         this.categoryName = categoryName;
+        this.descAndContacts = descAndContacts;
     }
 
     public String getBrandName() {
@@ -38,14 +39,6 @@ public class Advertaisment {
         this.iconImage = iconImage;
     }
 
-    public String getAdvertaismentImage() {
-        return advertaismentImage;
-    }
-
-    public void setAdvertaismentImage(String advertaismentImage) {
-        this.advertaismentImage = advertaismentImage;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -62,12 +55,19 @@ public class Advertaisment {
         this.categoryName = categoryName;
     }
 
+    public String getDescAndContacts() {
+        return descAndContacts;
+    }
+
+    public void setDescAndContacts(String descAndContacts) {
+        this.descAndContacts = descAndContacts;
+    }
+
     @Override
     public String toString() {
         return "Advertaisment{" +
                 "brandName='" + brandName + '\'' +
                 ", iconImage='" + iconImage + '\'' +
-                ", advertaismentImage='" + advertaismentImage + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

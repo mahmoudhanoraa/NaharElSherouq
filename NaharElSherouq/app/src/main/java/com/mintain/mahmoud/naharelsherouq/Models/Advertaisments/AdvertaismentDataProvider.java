@@ -17,9 +17,9 @@ public class AdvertaismentDataProvider {
         advertaismentsList = new ArrayList<Advertaisment>();
         advertaismentMap = new HashMap<String, Advertaisment>();
 
-        addAdvertaisment(new Advertaisment("شو طيب", "sho_tiab_icon.jpg", "sho_tiab.jpg", "Wonderful food", "ATM"));
-        addAdvertaisment(new Advertaisment("Iron Gym", "Iron_Gym_logo.jpg", "iron_gym_pic.jpg","Health Club for all family members", "Gym"));
-        addAdvertaisment(new Advertaisment("Spectra", "spectra_icon.jpg", "spectra.jpg", "Wonderfull Food", "Restaurant"));
+//        addAdvertaisment(new Advertaisment("شو طيب", "sho_tiab_icon.jpg", "sho_tiab.jpg", "Wonderful food", "ATM"));
+//        addAdvertaisment(new Advertaisment("Iron Gym", "Iron_Gym_logo.jpg", "iron_gym_pic.jpg","Health Club for all family members", "Gym"));
+//        addAdvertaisment(new Advertaisment("Spectra", "spectra_icon.jpg", "spectra.jpg", "Wonderfull Food", "Restaurant"));
 
 
 

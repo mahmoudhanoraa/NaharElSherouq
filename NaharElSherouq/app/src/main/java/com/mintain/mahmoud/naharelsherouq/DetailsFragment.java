@@ -48,7 +48,7 @@ public class DetailsFragment extends Fragment {
 
         name.setText(ad.getBrandName());
         description.setText(ad.getDescription());
-        Picasso.with(rootView.getContext()).load("file:///android_asset/"+ad.getAdvertaismentImage()).resize(300,400).into(pic);
+        Picasso.with(rootView.getContext()).load("file:///android_asset/"+ad.getIconImage()).resize(150,150).into(pic);
 
 
         return rootView;
