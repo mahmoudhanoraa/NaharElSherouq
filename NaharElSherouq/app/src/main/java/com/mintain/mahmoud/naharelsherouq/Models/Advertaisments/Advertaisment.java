@@ -1,10 +1,13 @@
 package com.mintain.mahmoud.naharelsherouq.Models.Advertaisments;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by mahmoud on 1/23/2017.
  */
 
-public class Advertaisment {
+public class Advertaisment implements Parcelable {
     private String brandName;
     private String iconImage;
     private String description;
@@ -71,4 +74,38 @@ public class Advertaisment {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.brandName);
+        dest.writeString(this.iconImage);
+        dest.writeString(this.description);
+        dest.writeString(this.categoryName);
+        dest.writeString(this.descAndContacts);
+    }
+
+    protected Advertaisment(Parcel in) {
+        this.brandName = in.readString();
+        this.iconImage = in.readString();
+        this.description = in.readString();
+        this.categoryName = in.readString();
+        this.descAndContacts = in.readString();
+    }
+
+    public static final Parcelable.Creator<Advertaisment> CREATOR = new Parcelable.Creator<Advertaisment>() {
+        @Override
+        public Advertaisment createFromParcel(Parcel source) {
+            return new Advertaisment(source);
+        }
+
+        @Override
+        public Advertaisment[] newArray(int size) {
+            return new Advertaisment[size];
+        }
+    };
 }

@@ -58,13 +58,13 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children){
                     Category cat = child.getValue(Category.class);
-                    Log.d("data", Boolean.toString(!cat.isIsService()));
+//                    Log.d("data", Boolean.toString(!cat.isIsService()));
                     if(!cat.isIsService()) {
                         cats.add(cat);
                     }
-                    adabter.notifyDataSetChanged();
+                   // adabter.notifyDataSetChanged();
                 }
-
+                adabter.notifyDataSetChanged();
             }
 
             @Override
