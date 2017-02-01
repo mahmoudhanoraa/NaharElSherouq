@@ -102,14 +102,14 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent facebook = getOpenFacebookIntent(MainActivity.this);
-                startActivity(facebook);
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent facebook = getOpenFacebookIntent(MainActivity.this);
+//                startActivity(facebook);
+//            }
+//        });
 
 //        Log.d("test", AdvertaismentDataProvider.advertaismentsList.toString());
 

@@ -58,7 +58,7 @@ public class ShopRecyclerViewAdabter extends RecyclerView.Adapter<ShopRecyclerVi
             filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
-                    Picasso.with(context).load(uri).resize(50,50).into(holder.catIcon);
+                    Picasso.with(context).load(uri).resize(80,80).into(holder.catIcon);
                 }
             });
             // END TESTING STORADGE

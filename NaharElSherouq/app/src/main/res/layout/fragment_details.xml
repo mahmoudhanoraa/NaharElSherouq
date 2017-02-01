@@ -8,7 +8,10 @@
         android:id="@+id/shopDetailCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imageAdDetail"
                 android:layout_alignParentTop="true"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/descriptionAdDetailText"
@@ -49,14 +52,14 @@
         android:layout_height="400dp"
         android:layout_below="@+id/shopDetailCard"
         android:layout_marginTop="20dp"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="20dp">
+        android:layout_alignParentRight="true"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/descriptionContactsDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
     </ScrollView>
 

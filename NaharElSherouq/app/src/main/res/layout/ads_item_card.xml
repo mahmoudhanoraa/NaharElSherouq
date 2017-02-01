@@ -8,7 +8,9 @@
         android:id="@+id/shopCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/adImage"
                 android:layout_alignParentTop="true"
-                android:textSize="30sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/adDisc"

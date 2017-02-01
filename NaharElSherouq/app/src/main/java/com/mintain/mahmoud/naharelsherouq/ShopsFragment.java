@@ -2,6 +2,9 @@ package com.mintain.mahmoud.naharelsherouq;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -28,7 +31,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class ShopsFragment extends android.support.v4.app.Fragment{
-
+    private ProgressDialog progressDialog;
     public ShopsFragment() {
         // Required empty public constructor
     }
@@ -37,7 +40,13 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.shops_fragment, container, false);
+
+        final View rootView = inflater.inflate(R.layout.shops_fragment, container, false);
+        progressDialog = new ProgressDialog(rootView.getContext());
+        progressDialog.setMessage("Loading... Check The network");
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.show();
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.shopsRecyclerView);
 //        List<Category> cats = CategoryDataProvider.categoryList;
@@ -57,6 +66,7 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
 
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 for (DataSnapshot child : children){
+                    progressDialog.dismiss();
                     Category cat = child.getValue(Category.class);
 //                    Log.d("data", Boolean.toString(!cat.isIsService()));
                     if(!cat.isIsService()) {
@@ -73,7 +83,6 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
             }
         });
 
-
         //END DATABASE TESTS
 
         recyclerView.setHasFixedSize(true);
@@ -83,7 +92,5 @@ public class ShopsFragment extends android.support.v4.app.Fragment{
 
         return rootView;
     }
-
-
 
 }
